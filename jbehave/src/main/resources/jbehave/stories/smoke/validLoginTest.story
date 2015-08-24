@@ -6,3 +6,4 @@ When I enter the username ziadh
 And I enter the password password
 And I click the login button
 Then I should see the dashboard home page
+
