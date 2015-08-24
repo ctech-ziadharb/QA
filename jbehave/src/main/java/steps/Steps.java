@@ -1,4 +1,7 @@
-package jbehave.steps;
+package steps;
+
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -8,6 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class Steps {
 	
 	public static ChromeDriver driver;
+	Path projectPath = Paths.get(System.getProperty("user.dir")).getFileName();
 	
 	public Steps() {
 		if(driver == null ){

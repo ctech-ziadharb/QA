@@ -1,4 +1,4 @@
-package jbehave.steps;
+package steps;
 
 import org.jbehave.core.annotations.Then;
 import org.junit.Assert;

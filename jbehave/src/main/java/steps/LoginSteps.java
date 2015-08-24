@@ -1,4 +1,7 @@
-package jbehave.steps;
+package steps;
+
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 import org.jbehave.core.annotations.AfterScenario;
 import org.jbehave.core.annotations.Given;
@@ -18,6 +21,9 @@ public class LoginSteps extends Steps {
 	public void goToDashboardHomePage()
 	{
 		System.out.println(System.getProperty("user.dir"));
+		Path projectPath = Paths.get(System.getProperty("user.dir"));
+		System.out.println(projectPath.getFileName());
+		
         driver.get("https://qadash.chenmed.com/PMR/logon.htm");
 	}
 	
