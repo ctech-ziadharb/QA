@@ -17,6 +17,7 @@ public class LoginSteps extends Steps {
 	@Given("I am on the dashboard")
 	public void goToDashboardHomePage()
 	{
+		System.out.println(System.getProperty("user.dir"));
         driver.get("https://qadash.chenmed.com/PMR/logon.htm");
 	}
 	
