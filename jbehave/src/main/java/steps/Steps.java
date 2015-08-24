@@ -14,7 +14,7 @@ public class Steps {
 	Path projectPath = Paths.get(System.getProperty("user.dir")).getFileName();
 	
 	public Steps() {
-		System.out.println(System.getProperty("user.dir") +"//chromedriver.exe");
+		System.out.println(System.getProperty("user.dir") +"//jbehave//chromedriver.exe");
 		if(driver == null ){
 			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") +"//chromedriver.exe");			
 			driver = new ChromeDriver();	
