@@ -1,8 +1,5 @@
 package steps;
 
-import java.nio.file.Path;
-import java.nio.file.Paths;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -13,7 +10,6 @@ public class Steps {
 	public static ChromeDriver driver;
 	
 	public Steps() {
-		System.out.println(System.getProperty("user.dir") +"c://chromedriver.exe");
 		if(driver == null ){
 			System.setProperty("webdriver.chrome.driver", "c://chromedriver.exe");			
 			driver = new ChromeDriver();	
