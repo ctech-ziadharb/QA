@@ -25,7 +25,7 @@ public class Steps {
 		if(driver == null ){
 			
 			DesiredCapabilities caps = DesiredCapabilities.phantomjs();
-			caps.setCapability(PhantomJSDriverService.PHANTOMJS_EXECUTABLE_PATH_PROPERTY, System.getProperty("user.dir") + "\\phantomjs.exe");
+			caps.setCapability(PhantomJSDriverService.PHANTOMJS_EXECUTABLE_PATH_PROPERTY, System.getProperty("user.dir") + "\\externalDrivers\\phantomjs.exe");
 	        
 	        driver = new PhantomJSDriver(caps);
 			}	
