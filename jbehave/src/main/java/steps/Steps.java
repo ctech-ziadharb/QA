@@ -1,24 +1,33 @@
 package steps;
 
+import java.io.File;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.phantomjs.PhantomJSDriver;
+import org.openqa.selenium.phantomjs.PhantomJSDriverService;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import net.anthavio.phanbedder.Phanbedder;
+
 public class Steps {
 	
-	public static ChromeDriver driver;
-//	public static WebDriver driver;
-	
+	static PhantomJSDriver driver = null;
+
+    
 	public Steps() {
+		
+		
 		if(driver == null ){
 			
-			System.setProperty("webdriver.chrome.driver", "c://chromedriver.exe");			
-//			ChromeOptions options = new ChromeOptions();
-//			options.setBinary("c://chromedriver.exe");
-//			driver = webdriver.Chrome(chrome_options = opts);
-			driver = new ChromeDriver();	
+			DesiredCapabilities caps = DesiredCapabilities.phantomjs();
+			caps.setCapability(PhantomJSDriverService.PHANTOMJS_EXECUTABLE_PATH_PROPERTY, System.getProperty("user.dir") + "\\phantomjs.exe");
+	        
+	        driver = new PhantomJSDriver(caps);
 			}	
 	}
 	

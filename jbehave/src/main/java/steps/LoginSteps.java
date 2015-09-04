@@ -4,21 +4,24 @@ import org.jbehave.core.annotations.AfterScenario;
 import org.jbehave.core.annotations.Given;
 import org.jbehave.core.annotations.When;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.WebDriver;
 
 
 public class LoginSteps extends Steps {
 	
 	
 	public LoginSteps() {
-		
+        	
 	}
 
 	
 	@Given("I am on the dashboard")
 	public void goToDashboardHomePage()
 	{
-		
-        driver.get("https://qadash.chenmed.com/PMR/logon.htm");
+		driver.get("https://qadash.chenmed.com/PMR/logon.htm");
+        driver.manage().window().setSize( new Dimension( 1124, 850 ) );
+        wait(By.xpath("//*[@id='username']"));
 	}
 	
 	@When("I enter the username $userName")

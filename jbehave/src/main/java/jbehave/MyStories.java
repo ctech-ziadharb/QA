@@ -22,6 +22,9 @@ import org.jbehave.core.steps.InstanceStepsFactory;
 import org.jbehave.core.steps.ParameterConverters;
 import org.jbehave.core.steps.ParameterConverters.DateConverter;
 import org.jbehave.core.steps.ParameterConverters.ExamplesTableConverter;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.phantomjs.PhantomJSDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 
 import steps.*;
 
@@ -40,6 +43,9 @@ import static org.jbehave.core.reporters.Format.XML;
  * </p> 
  */
 public class MyStories extends JUnitStories {
+
+	
+
     
     public MyStories() {
         configuredEmbedder().embedderControls().doGenerateViewAfterStories(true).doIgnoreFailureInStories(true)
@@ -47,7 +53,8 @@ public class MyStories extends JUnitStories {
     }
 
     @Override
-    public Configuration configuration() {
+    public Configuration configuration() {  
+    	
         Class<? extends Embeddable> embeddableClass = this.getClass();
         // Start from default ParameterConverters instance
         ParameterConverters parameterConverters = new ParameterConverters();
