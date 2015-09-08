@@ -20,7 +20,7 @@ public class LoginSteps extends Steps {
 	public void goToDashboardHomePage()
 	{
 		driver.get("https://qadash.chenmed.com/PMR/logon.htm");
-        driver.manage().window().setSize( new Dimension( 1124, 850 ) );
+//        driver.manage().window().setSize( new Dimension( 1124, 850 ) );
         wait(By.xpath("//*[@id='username']"));
 	}
 	
