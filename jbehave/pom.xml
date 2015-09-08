@@ -139,6 +139,7 @@
                 <include>${embeddables}</include>
               </includes>
               <excludes />
+              
               <ignoreFailureInStories>true</ignoreFailureInStories>
               <ignoreFailureInView>false</ignoreFailureInView>
               <threads>1</threads>
