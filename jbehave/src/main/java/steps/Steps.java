@@ -26,7 +26,7 @@ public class Steps {
 			
 			DesiredCapabilities caps = DesiredCapabilities.phantomjs();
 			caps.setCapability(PhantomJSDriverService.PHANTOMJS_EXECUTABLE_PATH_PROPERTY, "c:\\phantomjs.exe");
-	        
+	        caps.setCapability("browserConnectionEnabled", true);
 	        driver = new PhantomJSDriver(caps);
 			}	
 	}
