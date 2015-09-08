@@ -38,20 +38,13 @@
         <artifactId>selenium-java</artifactId>
         <version>LATEST</version>
     </dependency>  
-    <!-- 
-    <dependency>
-		<groupId>net.anthavio</groupId>
-		<artifactId>phanbedder-1.9.8</artifactId>
-		<version>1.0.0</version>
-	</dependency>
-    
-     
+         
     <dependency>
 		<groupId>com.github.detro.ghostdriver</groupId>
 		<artifactId>phantomjsdriver</artifactId>
 		<version>LATEST</version>
 	</dependency>
-	-->    
+	    
   </dependencies>
 
   <build>
