@@ -21,7 +21,7 @@ public class LoginSteps extends Steps {
 	{
 		driver.get("https://qadash.chenmed.com/PMR/logon.htm");
 //        driver.manage().window().setSize( new Dimension( 1124, 850 ) );
-        wait(By.xpath("//*[@id='username']"));
+        wait(By.xpath("//*[@id='userzzzname']"));
 	}
 	
 	@When("I enter the username $userName")
