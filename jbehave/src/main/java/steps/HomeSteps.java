@@ -21,7 +21,4 @@ public class HomeSteps extends Steps{
 			
 	}	
 
-
-	
-
 }

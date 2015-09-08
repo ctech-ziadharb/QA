@@ -1,5 +1,7 @@
 package steps;
 
+import org.jbehave.core.annotations.AfterScenario;
+import org.jbehave.core.annotations.BeforeScenario;
 import org.jbehave.core.annotations.Given;
 import org.jbehave.core.annotations.When;
 import org.openqa.selenium.By;
@@ -11,7 +13,6 @@ public class LoginSteps extends Steps {
 	public LoginSteps() {
         	
 	}
-
 	
 	@Given("I am on the dashboard")
 	public void goToDashboardHomePage()
@@ -40,6 +41,5 @@ public class LoginSteps extends Steps {
 		driver.findElement(By.xpath("/html/body/div[1]/form/div/input[3]")).click();
 	
 	}
-	
 	
 }

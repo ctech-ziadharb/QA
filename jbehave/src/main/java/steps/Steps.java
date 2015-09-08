@@ -1,5 +1,9 @@
 package steps;
 
+import org.jbehave.core.annotations.AfterScenario;
+import org.jbehave.core.annotations.AfterStory;
+import org.jbehave.core.annotations.BeforeScenario;
+import org.jbehave.core.annotations.BeforeStory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
 import org.openqa.selenium.phantomjs.PhantomJSDriverService;
@@ -13,14 +17,14 @@ public class Steps {
     
 	public Steps() {
 				
-		if(driver == null ){
-			
-			DesiredCapabilities caps = DesiredCapabilities.phantomjs();
-			caps.setCapability(PhantomJSDriverService.PHANTOMJS_EXECUTABLE_PATH_PROPERTY, "c:\\phantomjs.exe");
-	        caps.setCapability("browserConnectionEnabled", true);
-	        driver = new PhantomJSDriver(caps);
-					
-			}	
+//		if(driver == null ){
+//			
+//			DesiredCapabilities caps = DesiredCapabilities.phantomjs();
+//			caps.setCapability(PhantomJSDriverService.PHANTOMJS_EXECUTABLE_PATH_PROPERTY, "c:\\phantomjs.exe");
+//	        caps.setCapability("browserConnectionEnabled", true);
+//	        driver = new PhantomJSDriver(caps);
+//					
+//			}	
 	}
 	
 	public static void wait(By by)
@@ -29,10 +33,26 @@ public class Steps {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(by));
     }
 	
-	 public static void close()
-     {
-         driver.quit();
-         driver = null;
-     }
-
+	@BeforeStory
+	public void open()
+    {
+		if(driver == null ){
+			
+			DesiredCapabilities caps = DesiredCapabilities.phantomjs();
+			caps.setCapability(PhantomJSDriverService.PHANTOMJS_EXECUTABLE_PATH_PROPERTY, "c:\\phantomjs.exe");
+	        caps.setCapability("browserConnectionEnabled", true);
+	        driver = new PhantomJSDriver(caps);
+					
+		}	
+    }
+	
+	@AfterStory	
+	public void close()
+	{
+		if(driver != null ){
+		driver.quit();
+		driver = null;
+		}
+	}
+	
 }

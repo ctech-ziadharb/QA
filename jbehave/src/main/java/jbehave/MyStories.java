@@ -40,7 +40,8 @@ import steps.LoginSteps;
 public class MyStories extends JUnitStories {
 
 	
-
+	public void beforeStories(){
+    }
     
     public MyStories() {
         configuredEmbedder().embedderControls().doGenerateViewAfterStories(true).doIgnoreFailureInStories(true)
