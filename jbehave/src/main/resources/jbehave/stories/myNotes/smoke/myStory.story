@@ -1,5 +1,8 @@
+Meta:
+@suite myNotesSmoke
 
 Scenario: testing the dashboard login feature
+
 
 Given I am on the dashboard
 When I enter the username ziadh
