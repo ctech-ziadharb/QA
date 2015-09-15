@@ -2,7 +2,6 @@ package steps;
 
 import org.jbehave.core.annotations.AfterStory;
 import org.jbehave.core.annotations.BeforeScenario;
-import org.jbehave.core.annotations.BeforeStory;
 
 import pages.Pages;
 

@@ -1,7 +1,5 @@
 package steps;
 
-import org.jbehave.core.annotations.AfterStory;
-import org.jbehave.core.annotations.BeforeStory;
 import org.jbehave.core.annotations.Given;
 import org.jbehave.core.annotations.When;
 
