@@ -25,7 +25,12 @@ import org.jbehave.core.steps.InstanceStepsFactory;
 import org.jbehave.core.steps.ParameterConverters;
 import org.jbehave.core.steps.ParameterConverters.DateConverter;
 import org.jbehave.core.steps.ParameterConverters.ExamplesTableConverter;
+import org.jbehave.web.selenium.FirefoxWebDriverProvider;
+import org.jbehave.web.selenium.PropertyWebDriverProvider;
+import org.jbehave.web.selenium.WebDriverProvider;
+import org.openqa.selenium.phantomjs.PhantomJSDriverService;
 
+import pages.Pages;
 import steps.HomeSteps;
 import steps.LoginSteps;
 
@@ -39,11 +44,17 @@ import steps.LoginSteps;
  */
 public class MyStories extends JUnitStories {
 
+	private final WebDriverProvider driverProvider = new PropertyWebDriverProvider();
+	private final Pages pages = new Pages(driverProvider);
 	
 	public void beforeStories(){
+
     }
     
     public MyStories() {
+    	System.setProperty(PhantomJSDriverService.PHANTOMJS_EXECUTABLE_PATH_PROPERTY, "c:\\phantomjs.exe");
+    	System.setProperty("browser", "PHANTOMJS");
+    	
         configuredEmbedder().embedderControls().doGenerateViewAfterStories(true).doIgnoreFailureInStories(true)
                 .doIgnoreFailureInView(true).useThreads(2).useStoryTimeoutInSecs(60);
     }
@@ -71,7 +82,7 @@ public class MyStories extends JUnitStories {
 
     @Override
     public InjectableStepsFactory stepsFactory() {
-        return new InstanceStepsFactory(configuration(), new LoginSteps(), new HomeSteps());
+        return new InstanceStepsFactory(configuration(), new LoginSteps(pages), new HomeSteps(pages));
     }
 
     @Override

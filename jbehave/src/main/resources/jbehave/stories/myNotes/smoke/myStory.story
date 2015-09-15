@@ -1,5 +1,3 @@
-Meta:
-@suite myNotesSmoke
 
 Scenario: testing the dashboard login feature
 

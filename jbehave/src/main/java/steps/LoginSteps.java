@@ -1,42 +1,43 @@
 package steps;
 
+import org.jbehave.core.annotations.AfterStory;
+import org.jbehave.core.annotations.BeforeStory;
 import org.jbehave.core.annotations.Given;
 import org.jbehave.core.annotations.When;
-import org.openqa.selenium.By;
+
+import pages.Pages;
 
 
 public class LoginSteps extends Steps {
 	
-	
-	public LoginSteps() {
-        	
+	public LoginSteps(Pages pages) {
+    	super(pages);
 	}
-	
+				
 	@Given("I am on the dashboard")
 	public void goToDashboardHomePage()
 	{
-		driver.get("https://qadash.chenmed.com/PMR/logon.htm");
-        wait(By.xpath("//*[@id='username']"));
+		pages.loginPage().goToDashboardHomePage();
 	}
 	
 	@When("I enter the username $userName")
 	public void enterUsername(String userName)
 	{
-		driver.findElement(By.id("username")).sendKeys(userName);
+		pages.loginPage().enterUsername(userName);
 		
 	}
 	
 	@When("I enter the password $password")
 	public void enterPassword(String password)
 	{
-		driver.findElement(By.id("password")).sendKeys(password);
+		pages.loginPage().enterPassword(password);
 		
 	}
 	
 	@When("I click the login button")
 	public void clickLoginButton()
-	{
-		driver.findElement(By.xpath("/html/body/div[1]/form/div/input[3]")).click();
+	{	
+		pages.loginPage().clickLoginButton();
 	
 	}
 	

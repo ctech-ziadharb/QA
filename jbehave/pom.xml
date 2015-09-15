@@ -12,7 +12,8 @@
     <jbehave.site.version>3.3</jbehave.site.version>
     <embeddables>**/*Stories.java</embeddables>
   </properties>
-
+  
+ 
   <dependencies>
     <dependency>
       <groupId>org.jbehave</groupId>
@@ -34,17 +35,47 @@
     </dependency>
     
     <dependency>
-        <groupId>org.seleniumhq.selenium</groupId>
-        <artifactId>selenium-java</artifactId>
-        <version>LATEST</version>
-    </dependency>  
-         
+		<groupId>org.seleniumhq.selenium</groupId>
+		<artifactId>selenium-java</artifactId>
+		<version>2.44.0</version>
+	</dependency>
+    
+    <dependency>
+	<groupId>org.seleniumhq.selenium</groupId>
+	<artifactId>selenium-server</artifactId>
+	<version>2.6.0</version>
+	</dependency>
+	
+	<dependency>  
+      <groupId>org.seleniumhq.selenium</groupId>
+      <artifactId>selenium-common</artifactId>
+      <version>2.0b1</version>
+	</dependency>  
+	<dependency>  
+      <groupId>org.seleniumhq.selenium</groupId>
+      <artifactId>selenium-api</artifactId>
+      <version>2.35.0</version>
+	</dependency>  
+    <!--      
     <dependency>
 		<groupId>com.github.detro.ghostdriver</groupId>
 		<artifactId>phantomjsdriver</artifactId>
 		<version>LATEST</version>
 	</dependency>
-	    
+	    -->
+	<dependency>
+		<groupId>org.jbehave.web</groupId>
+		<artifactId>jbehave-web-selenium</artifactId>
+		<version>3.5.5</version>
+	</dependency>
+
+	<dependency>
+		<groupId>org.jbehave.web</groupId>
+		<artifactId>jbehave-web-selenium</artifactId>
+		<version>3.6-beta-2</version>
+	</dependency>
+
+	
   </dependencies>
 
   <build>
@@ -154,7 +185,22 @@
           </execution>
         </executions>
       </plugin>
-          
+      <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <executions>
+            <execution>
+                <id>attach-sources</id>
+                <goals>
+                    <goal>jar</goal>
+                </goals>
+            </execution>
+        </executions>
+        <configuration>
+            <attach>true</attach>
+        </configuration>
+      </plugin>
+               
     </plugins>
   </build>
 

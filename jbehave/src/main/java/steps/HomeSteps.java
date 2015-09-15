@@ -1,24 +1,20 @@
 package steps;
 
 import org.jbehave.core.annotations.Then;
-import org.junit.Assert;
-import org.openqa.selenium.By;
+
+import pages.Pages;
 
 
 public class HomeSteps extends Steps{
 	
-	public HomeSteps() {
-		
+	public HomeSteps(Pages pages) {
+    	super(pages);   	
 	}
 	
 	@Then("I should see the dashboard home page")
 	public void verifyHomePage()
-	{
-		wait(By.id("apptsTabBa"));
-		String actualResult = driver.findElement(By.id("apptsTabBa")).getText();
-		
-		Assert.assertEquals("Appointment", actualResult);
-			
+	{	
+		pages.homePage().verifyHomePage();			
 	}	
 
 }
