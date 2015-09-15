@@ -8,7 +8,6 @@ public class LoginPage extends AbstractPage{
 
 	public LoginPage(WebDriverProvider webDriverProvider) {
         super(webDriverProvider);
-
 	}
 		
 	public void goToDashboardHomePage()
