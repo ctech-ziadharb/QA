@@ -8,12 +8,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public abstract class AbstractPage extends WebDriverPage  {
 
-    protected WebDriverProvider webDriverProvider;
     private static boolean driverInitialize = false;
 
 	public AbstractPage(WebDriverProvider driverProvider) {
         super(driverProvider);
-        this.webDriverProvider = driverProvider;		
 	}
 	
 	public boolean isJavascriptEnabled(){
