@@ -26,15 +26,5 @@ public class Pages {
         }
         return homePage;
     }
-    
-	public void open(){
-		webDriverProvider.initialize();
-		
-	}
-	
-	public void close(){
-		webDriverProvider.end();
-		
-	}
-    
+       
 }
