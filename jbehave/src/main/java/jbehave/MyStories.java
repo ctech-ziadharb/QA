@@ -51,6 +51,10 @@ public class MyStories extends JUnitStories {
     }
     
     public MyStories() {
+    	//if using chrome
+//    	System.setProperty("webdriver.chrome.driver", "c://chromedriver.exe");			
+//    	System.setProperty("browser", "CHROME");
+    	//else if using phantomjs
     	System.setProperty(PhantomJSDriverService.PHANTOMJS_EXECUTABLE_PATH_PROPERTY, "c:\\phantomjs.exe");
     	System.setProperty("browser", "PHANTOMJS");
     	
