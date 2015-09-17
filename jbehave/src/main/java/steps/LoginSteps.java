@@ -17,7 +17,7 @@ public class LoginSteps extends Steps {
 	{
 		pages.loginPage().goToDashboardHomePage();
 	}
-	
+		
 	@When("I enter the username $userName")
 	public void enterUsername(String userName)
 	{
