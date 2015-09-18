@@ -15,6 +15,11 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+TEAMCITY_DASHBOARD_WEB_PROJECT_NAME = 'source_build'
+TEAMCITY_URL = 'localhost:81'
+JENKINS_SMOKE_JOB_NAME = 'Smoke'
+JENKINS_DEFAULT_URL = None
+JENKINS_TIMEOUT = 10
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
@@ -37,6 +42,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'radiator',
+
 )
 
 MIDDLEWARE_CLASSES = (
